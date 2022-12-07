@@ -1,7 +1,7 @@
 # Import the necessary libraries
 import tweepy # for accessing the Twitter API
-import schedule # for scheduling the tweets
-import time # for adding delays
+from datetime import datetime # for getting the current date and time
+from apscheduler.schedulers.blocking import BlockingSchedulerimport # for adding delays
 import openai # for using the OpenAI API
 from dotenv import load_dotenv # for loading environment variables
 load_dotenv() # load environment variables
@@ -10,12 +10,12 @@ import random
 
 # Add your OpenAI API key here
 #openai.organization = ""
-openai.api_key = os.getenv("OPENAI_API_KEY")
+openai.api_key = os.environ.get("OPENAI_API_KEY")
 
 # Add your Twitter API keys here
-consumer_key = os.get
-consumer_secret = ""
-access_token = ""
+consumer_key = os.environ.get("TWITTER_CONSUMER_KEY")
+consumer_secret = os.environ.get("TWITTER_CONSUMER_SECRET")
+access_token = os.environ.get("TWITTER_ACCESS_TOKEN")
 access_token_secret = ""
 
 # Authenticate the API keys
@@ -45,13 +45,11 @@ def generate_text(prompt, max_tokens=70):
 
 # Function that posts a tweet
 def post_tweet():
+    print("Posting tweet...")
     prompt = get_random_prompt()
     api.update_status(generate_text(prompt))
 
-# Use the 'schedule' library to run the 'post_tweet' function
-# every 2-5 hours
-schedule.every(random.randint(120, 300)).minutes.do(post_tweet)
-
-while True:
-    schedule.run_pending()
-    time.sleep(1)
+# Schedule the function to run every 2-6 hours
+sched = BlockingScheduler()
+sched.add_job(post_tweet, 'interval', hours=4, jitter=7200)
+sched.start()
