@@ -8,16 +8,18 @@ Visit [OpenAPI Account Keys](https://beta.openai.com/account/api-keys) to obtain
 
 Copy this key and use it to populate OPENAI_API_KEY in your .env file
 
-## Obtain twitter bearer token
-> You will need to obtain a personal bearer token. The Twitter API keys which come from Twitter's developer dashboard for projects & apps will not work
+## Obtain twitter keys
 
-You may get the bearer token for your account(user account) by following the below link: [Twitter API Documentation](developer.twitter.com)
+You can access your Twitter API keys through the [Twitter Developer Dashboard](https://developer.twitter.com/en/portal/dashboard). If you haven't used this platform before you will need to create a project once you've registered an account. 
 
-Click on “Try a live request” <br>
-Click on three dots on the right-hand side. it will open up a window. <br>
-Click on the “Include access token” button and it will show your bear token in your curl command.
+Once you've registered a project, navigate to the Twitter Developers dashboard homepage <br>
+Look for your project under the Apps section and click the key icon on your project <br>
+Generate your Consumer(API) key and secret <br>
+Copy these values and use them to populate the TWITTER_API_KEY and TWITTER_API_KEY_SECRET entries in your .env file <br>
 
-Copy this token and use it to populate BEARER_TOKEN in your .env file
+
+Under the Authentication Tokens section, generate an Access Token and Secret <br>
+Copy these values and use them to populate the TWITTER_ACCESS_TOKEN and TWITTER_ACCESS_TOKEN_SECRET entires in your .env file.
 
 
 ## How to use
