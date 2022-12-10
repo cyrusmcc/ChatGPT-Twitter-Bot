@@ -1,12 +1,12 @@
 # Openai-Twitter-Bot
  A basic python script which generates & posts tweets from Openai prompts.
 
-## Obtain an OpenAPI API key
-> OpenAPI consumes tokens to generate each tweet, you must posess token credits or add a payment option to your OpenAPI account to utilize these features. At current OpenAPI prices for davinci model, a dollar will generate ~700 tweets.
+## Obtain an OpenAPI Auth
+> ChatGPT is currently free to utilize but this may change in the future.
 
-Visit [OpenAPI Account Keys](https://beta.openai.com/account/api-keys) to obtain a secret Key
+If you do not have an OpenAI account already, you will need to register one here [OpenAI](https://auth0.openai.com/u/signup/identifier?state=hKFo2SBTYlpad0VuSDQyQ1c3d3Zoa2ZuZ0pqNktPQnBJTDJTOKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEh3WWN4Ylp0YzRaUTg4SlotSGJINDhRVlpRX2RnMUp1o2NpZNkgRFJpdnNubTJNdTQyVDNLT3BxZHR3QjNOWXZpSFl6d0Q)
 
-Copy this key and use it to populate OPENAI_API_KEY in your .env file
+Use your account email and password into to populate the  OPENAI_EMAIL and OPENAI_PASSWORD fields in your .env file
 
 ## Obtain twitter keys
 
@@ -24,12 +24,16 @@ Copy these values and use them to populate the TWITTER_ACCESS_TOKEN and TWITTER_
 
 ## How to use
 
-This script will use prompts placed in **prompts.txt** to generate tweets which will be posted to your twitter account in random intervals between 2-6 hours of length.
+This script will use prompts generated in **prompts.py** to generate tweets which will be posted to your twitter account in random intervals between 2-6 hours of length. Prompts are composed of a *prompt_start* value which provides a proposition, a *topic*, a *wildcard*, an *attribute*, and a *constraint*. You will need to provide values in these fields to utilze the bot.
 
-### Example of a prompt to place inside prompts.txt
-> Give me a tweet idea with hashtags which asks a witty question`
 
-Add as many prompts as you like this this file and execute the program. An output log will be kept in **tweets.txt**
+### Example of a prompt created from the above fields
+>  give me a tweet asking a question about WebGL using multiple relevant hashtags using lower case letters in less than 280 characters
+
+### The resulting tweet
+> Are there any good tutorials for learning #webgl from scratch? Looking to dive in and create some cool 3D graphics. #gamedev #javascript #3d
+
+Add as many prompts or additional input fields as you like to this file and execute the program. An output log will be kept in **tweets.txt**
 
 ### Execute the program
 > python3 twitterbot.py
