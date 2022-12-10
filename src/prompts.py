@@ -1,4 +1,4 @@
-import random  # random time interval
+import random
 
 # Add your own topics
 topics = [
