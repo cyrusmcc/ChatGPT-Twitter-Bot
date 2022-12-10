@@ -42,8 +42,7 @@ def post_tweet():
     print("Posted tweet at: ", date_time)
     output_file.write('prompt: ' + prompt + ' date_time: ' + date_time)
 
-post_tweet()
 # Schedule the function to run every 2-6 hours
-#sched = BlockingScheduler()
-#sched.add_job(post_tweet, 'interval', hours=4, jitter=7200)
-# sched.start()
+sched = BlockingScheduler()
+sched.add_job(post_tweet, 'interval', hours=4, jitter=7200)
+sched.start()
