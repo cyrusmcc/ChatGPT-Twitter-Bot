@@ -31,7 +31,7 @@ This script will use prompts generated in **prompts.py** to generate tweets whic
 >  give me a tweet asking a question about WebGL using multiple relevant hashtags using lower case letters in less than 280 characters
 
 ### The resulting tweet
-> Are there any good tutorials for learning #webgl from scratch? Looking to dive in and create some cool 3D graphics. #gamedev #javascript #3d
+![image](https://user-images.githubusercontent.com/61042997/206834988-27bebff6-93ea-45d2-9430-638e3916b255.png)
 
 Add as many prompts or additional input fields as you like to this file and execute the program. An output log will be kept in **tweets.txt**
 
