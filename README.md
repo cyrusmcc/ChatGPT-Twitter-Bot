@@ -1,5 +1,5 @@
-# Openai-Twitter-Bot
- A basic python script which generates & posts tweets from Openai prompts.
+# ChatGPT-Twitter-Bot
+ A basic python script which generates & posts tweets from ChatGPT prompts.
 
 ## Obtain an OpenAPI Auth
 > ChatGPT is currently free to utilize but this may change in the future.
