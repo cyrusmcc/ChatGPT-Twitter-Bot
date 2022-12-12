@@ -52,9 +52,9 @@ Add as many prompts or additional input fields as you like to this file and exec
 A docker file is provided if you wish to run your bot in a docker container. To create a docker image from the directory which contains this twitter bot
 
 ### Execute in a terminal
-> docker build -t openapi-twitter-bot .
+> docker build -t chatgpt-twitter-bot .
 
 This will create a docker image which can then be used to instantiate a docker container.
 
 ### Run a docker container
-> docker run -t --name=openapi-twitter-bot-container -p replace-with-your-local-ip:8080:80 openapi-twitter-bot
+> docker run -t --name=chatgpt-twitter-bot-container -p replace-with-your-local-ip:8080:80 chatgpt-twitter-bot
