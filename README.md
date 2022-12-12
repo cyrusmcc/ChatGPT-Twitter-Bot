@@ -9,11 +9,14 @@ If you do not have an OpenAI account already, you will need to register one here
 
 Visit [ChatGPT](https://chat.openai.com/chat) and obtain your session token as follows
 
-```
+<details>
+  <summary>How to find token</summary>
+
 ![image](https://user-images.githubusercontent.com/36258159/207075245-279d8c50-9169-459e-b2b2-9c81b3d05028.png)
 
 Copy the __Secure-next-auth.session-token cookie value and add it to your .env CHATGPT_SESSION_TOKEN field.
-```
+  
+</details>
 
 ## Obtain twitter keys
 
