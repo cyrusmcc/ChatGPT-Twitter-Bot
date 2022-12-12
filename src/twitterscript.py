@@ -8,12 +8,11 @@ from revChatGPT.revChatGPT import Chatbot  # for using the RevChatGPT API
 from prompts import get_random_prompt
 load_dotenv()  # load environment variables
 
-config = {
-    "email": os.environ.get("OPENAI_EMAIL"),
-    "password": os.environ.get("OPENAI_PASSWORD"),
+chatbot_config = {
+    "session_token": os.environ.get("CHATGPT_SESSION_TOKEN"),
 }
 
-chatbot = Chatbot(config, conversation_id=None)
+chatbot = Chatbot(chatbot_config, conversation_id=None)
 
 # Create the Twitter API object
 client = tweepy.Client(
@@ -31,18 +30,22 @@ def generate_text(prompt):
     return response['message'].replace('"', '')
 
 # Function that posts a tweet
+
 def post_tweet():
     now = datetime.now()
     date_time = now.strftime("%m/%d/%Y, %H:%M:%S")
     prompt = get_random_prompt()
     text = generate_text(prompt)
-    
+
     client.create_tweet(text=text, user_auth=True)
-    
+
     print("Posted tweet at: ", date_time)
     output_file.write('prompt: ' + prompt + ' date_time: ' + date_time)
 
+
+print(generate_text(get_random_prompt()))
+
 # Schedule the function to run every 2-6 hours
-sched = BlockingScheduler()
-sched.add_job(post_tweet, 'interval', hours=4, jitter=7200)
-sched.start()
+#sched = BlockingScheduler()
+#sched.add_job(post_tweet, 'interval', hours=4, jitter=7200)
+#sched.start()

@@ -1,12 +1,19 @@
 # ChatGPT-Twitter-Bot
- A basic python script which generates & posts tweets from ChatGPT prompts.
+ A basic bot which posts tweets generated from ChatGPT prompts utilizing [revChatGPT](https://github.com/acheong08/ChatGPT), a third party ChatGPT API.
 
-## Obtain an OpenAPI Auth
-> ChatGPT is currently free to utilize but this may change in the future.
+## Obtain ChatGPT Session Token
+> NOTE: This project is utilzing a third party ChatGPT API which requires workarounds for OpenAI's Cloudflare protections. You will need to have google chrome installed on your desktop environment in order to fetch the Cloudfare clearance tokens.
+
 
 If you do not have an OpenAI account already, you will need to register one here [OpenAI](https://auth0.openai.com/u/signup/identifier?state=hKFo2SBTYlpad0VuSDQyQ1c3d3Zoa2ZuZ0pqNktPQnBJTDJTOKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEh3WWN4Ylp0YzRaUTg4SlotSGJINDhRVlpRX2RnMUp1o2NpZNkgRFJpdnNubTJNdTQyVDNLT3BxZHR3QjNOWXZpSFl6d0Q)
 
-Use your account email and password into to populate the  OPENAI_EMAIL and OPENAI_PASSWORD fields in your .env file
+Visit [ChatGPT](https://chat.openai.com/chat) and obtain your session token as follows
+
+```
+![image](https://user-images.githubusercontent.com/36258159/207075245-279d8c50-9169-459e-b2b2-9c81b3d05028.png)
+
+Copy the __Secure-next-auth.session-token cookie value and add it to your .env CHATGPT_SESSION_TOKEN field.
+```
 
 ## Obtain twitter keys
 
@@ -40,6 +47,8 @@ Add as many prompts or additional input fields as you like to this file and exec
 
 
 ## Creating a docker container
+> NOTE: Cloudflare protections have made the Dockerfile unusable at the moment, I will need to do some testing with the new revChatGPT workarounds to get this to work. 
+
 A docker file is provided if you wish to run your bot in a docker container. To create a docker image from the directory which contains this twitter bot
 
 ### Execute in a terminal
