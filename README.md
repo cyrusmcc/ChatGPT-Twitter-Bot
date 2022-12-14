@@ -1,19 +1,12 @@
 # ChatGPT-Twitter-Bot
- A basic bot which posts tweets generated from ChatGPT prompts utilizing [revChatGPT](https://github.com/acheong08/ChatGPT), a third party ChatGPT API.
+ A basic bot which posts tweets generated from ChatGPT prompts utilizing [revChatGPT](https://github.com/acheong08/ChatGPT), a third party ChatGPT API. OpenAI is actively trying to circumvent bot activity on ChatGPT which is resulting in a lot of instability with this API. This bot may break or cease to function often. Once an official API is available for ChatGPT this repository will be updated to utilize it. 
 
 ## Obtain ChatGPT Session Token
-> NOTE: This project is utilzing a third party ChatGPT API which requires workarounds for OpenAI's Cloudflare protections. You will need to have google chrome installed on your desktop environment in order to fetch the Cloudfare clearance tokens.
+> NOTE: This project is utilzing a third party ChatGPT API which requires workarounds for OpenAI's Cloudflare protections. You will need Firefox/Chrome intalled.When executing this application a browser will open and you will need to login to OpenAI with your account information.
 
 
 If you do not have an OpenAI account already, you will need to register one here [OpenAI](https://auth0.openai.com/u/signup/identifier?state=hKFo2SBTYlpad0VuSDQyQ1c3d3Zoa2ZuZ0pqNktPQnBJTDJTOKFur3VuaXZlcnNhbC1sb2dpbqN0aWTZIEh3WWN4Ylp0YzRaUTg4SlotSGJINDhRVlpRX2RnMUp1o2NpZNkgRFJpdnNubTJNdTQyVDNLT3BxZHR3QjNOWXZpSFl6d0Q)
 
-Visit [ChatGPT](https://chat.openai.com/chat) and obtain your session token as follows
-
-```
-![image](https://user-images.githubusercontent.com/36258159/207075245-279d8c50-9169-459e-b2b2-9c81b3d05028.png)
-
-Copy the __Secure-next-auth.session-token cookie value and add it to your .env CHATGPT_SESSION_TOKEN field.
-```
 
 ## Obtain twitter keys
 

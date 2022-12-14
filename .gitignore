@@ -153,3 +153,4 @@ cython_debug/
 prompts.txt
 prompts.txt
 .env
+mp.py
