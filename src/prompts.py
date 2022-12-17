@@ -1,33 +1,25 @@
 import random
-
-# Add your own topics
-topics = [
-    "ChatGPT",
-]
-
-# Add your own prompt propositions
-prompt_start = [
-    "telling me about",
-]
-
-# Add your own wildcards
-wildcard = [
-    "using a mention to a popular person in the field",
-]
-
-# Add your own tweet attributes
-attributes = [
-    "using a popular relevant hashtag",
-]
-
-# Add your own constraints
-constraints = [
-    "in less than 280 characters",
-]
+import json
 
 def get_random_prompt():
-    prompt = "give me a tweet " + random.choice(prompt_start) + " " + random.choice(
-        topics) + " " + random.choice(attributes) + " " + random.choice(wildcard) + " " + constraints[0]
+    # load prompts from json file
+    promptJSON = open('prompts.json', 'r')
+    promptData = json.load(promptJSON)
+    promptJSON.close()
+
+    # assemble prompt
+    promptTemplate = random.choice(promptData['prompts'])
+    promptTopic = random.choice(promptData['topics'])
     
+    promptAttributes = ', '.join([x + '' for x in promptData['attributes']]) + '.'
+    promptAttributes = promptAttributes.capitalize()
+    
+    promptConstraints = ', '.join([x + '' for x in promptData['constraints']]) + '.'
+    promptConstraints = promptConstraints.capitalize()
+
+    promptWildcard = random.choice(promptData['wildcards'])
+    
+    prompt = promptTemplate.replace('{topic}', promptTopic) 
+    prompt += ' ' + promptAttributes + ' ' + promptWildcard + '. ' + promptConstraints
     prompt = prompt.replace('"', '')
     return prompt

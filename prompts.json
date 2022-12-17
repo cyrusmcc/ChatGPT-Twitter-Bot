@@ -1,0 +1,22 @@
+{
+    "prompts": [
+        "Describe {topic} from a unique perspective or angle.",
+        "Share a personal story or experience that relates to {topic}"
+    ],
+    "topics": [
+        "openai",
+        "chatgpt"
+    ],
+    "attributes": [
+        "Use an informal tone",
+        "Use relaxed punctuation"
+    ],
+    "wildcards": [
+        "Mention a specific company",
+        "Mention a relevant popular twitter account",
+        "Use a relevant emoji"
+    ],
+    "constraints": [
+        "Write your response as a tweet with at most 280 characters"
+    ]
+}

@@ -25,14 +25,18 @@ Copy these values and use them to populate the TWITTER_ACCESS_TOKEN and TWITTER_
 
 ## How to use
 
-This script will use prompts generated in **prompts.py** to generate tweets which will be posted to your twitter account in random intervals between 2-6 hours of length. Prompts are composed of a *prompt_start* value which provides a proposition, a *topic*, a *wildcard*, an *attribute*, and a *constraint*. You will need to provide values in these fields to utilze the bot.
-
+This script will use prompts generated in **prompts.py** to generate tweets which will be posted to your twitter account in random intervals between 2-6 hours of length. Prompts are composed of a prompt template, a topic, a list of attributes, a wildcard, and a list of constraints. Example values can be found in prompts.json and additional properties can be added here. 
 
 ### Example of a prompt created from the above fields
->  give me a tweet asking a question about WebGL using multiple relevant hashtags using lower case letters in less than 280 characters
+Without values
+> Describe {topic} from a unique perspective or angle. {attributes}. {wildcard}. {constraints}.
+
+With values
+>  Describe chatgpt from a unique perspective or angle. Use an informal tone, use relaxed punctuation. Mention a specific company. Write your response as a tweet with at most 280 characters.
 
 ### The resulting tweet
-![image](https://user-images.githubusercontent.com/61042997/206834988-27bebff6-93ea-45d2-9430-638e3916b255.png)
+![image](https://user-images.githubusercontent.com/61042997/208254767-da32936d-a736-449a-abff-71fc94f4fd59.png)
+
 
 Add as many prompts or additional input fields as you like to this file and execute the program. An output log will be kept in **tweets.txt**
 
